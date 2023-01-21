@@ -34,7 +34,7 @@ public class ValidationFilter implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		String pan=request.getParameter("pan");
-		 if(pan==null || !pan.matches("[A-Z]{5}||[0-9]{4}"))
+		 if(pan==null || !pan.matches("[A-Z]{5}[0-9]{4}"))
 		 {
 			PrintWriter out =response.getWriter();
 			request.getRequestDispatcher("index.html").include(request, response);
